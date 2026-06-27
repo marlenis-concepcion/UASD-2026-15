@@ -21,6 +21,15 @@ Este expediente convierte el programa oficial de SAP-105 en una propuesta docent
 6. `11_evaluacion/`: tabla de especificaciones y registro de calificación.
 7. `12_retroalimentacion_y_analisis/`: protocolo para revisar entregas anonimizadas y mejorar el curso.
 8. `13_entregables/`: guía de publicación para el aula virtual.
+9. `index.html`: portal visual y navegable de la asignatura.
+10. `REGLAS_DE_TRABAJO.md`: gobernanza, protección de casos y validación humana.
+
+## Recursos complementarios
+
+- [Portal web de SAP-105](index.html)
+- [Reglas de trabajo y protección del expediente](REGLAS_DE_TRABAJO.md)
+- [Agente de validación APA 7](../../SAP-105Mtra%20Mary/AGENTE_VALIDACION_NORMAS_APA_7ma.md)
+- [Checklist rápida APA 7](../../SAP-105Mtra%20Mary/CHECKLIST_RAPIDA_APA_7ma.md)
 
 ## Flujo de agentes aplicado
 
@@ -34,4 +43,3 @@ Para entregas reales: `anonimización → 10 calificación por rúbrica → vali
 - Confirmar modalidad, sección, horario, recinto, cantidad de estudiantes y plataformas disponibles.
 - Validar con la Cátedra el esquema evaluativo, la evaluación final y cualquier actualización del programa.
 - Sustituir “Mtra. Mary” por el nombre institucional completo si corresponde.
-
