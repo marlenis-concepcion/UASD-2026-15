@@ -1,0 +1,29 @@
+# Archivos del sistema operativo
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Entornos y dependencias locales
+.venv/
+venv/
+**/.vendor/
+node_modules/
+
+# Cachés y archivos generados
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.log
+*.tmp
+*~
+
+# Configuración local y credenciales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Configuración de editores
+.vscode/
+.idea/

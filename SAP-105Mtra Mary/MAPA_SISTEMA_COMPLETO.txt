@@ -1,0 +1,256 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                  SISTEMA COMPLETO DE VALIDACIÓN APA 7MA                         ║
+║                       📚 Centro de Aseguramiento de Calidad                      ║
+║                    Para Tesis y Trabajos Académicos - SAP-105                   ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+CARPETA: SAP-105Mtra Mary/
+├────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  📄 README_INICIO_AQUI.md (13 KB)                            ⭐ PUNTO DE INICIO │
+│     └─ Índice maestro de todo el sistema                                       │
+│     └─ Flujo de trabajo recomendado                                            │
+│     └─ Matriz de decisión rápida                                               │
+│     └─ Preguntas frecuentes                                                    │
+│     └─ Top 10 errores más comunes                                              │
+│                                                                                  │
+├────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  ⚡ CHECKLIST_RAPIDA_APA_7ma.md (5.7 KB)              REVISIÓN PRELIMINAR (5') │
+│     └─ Validación expedita en 5-10 minutos                                     │
+│     └─ 6 secciones principales                                                │
+│     └─ Checkboxes de estado rápido                                             │
+│     └─ Hallazgos sintetizados                                                  │
+│     └─ Matriz de decisión                                                      │
+│                                                                                  │
+│     IDEAL PARA:                                                                │
+│     ✓ Primera revisión preliminar                                              │
+│     ✓ Re-validaciones rápidas                                                  │
+│     ✓ Documentos casi OK                                                       │
+│                                                                                  │
+├────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  📖 INSTRUCCIONES_USO_AGENTE_APA.md (14 KB)            GUÍA OPERATIVA COMPLETA │
+│     └─ Cómo usar todo el sistema paso a paso                                  │
+│     └─ Flujo de trabajo detallado (4 pasos)                                    │
+│     └─ Proceso de re-validación                                                │
+│     └─ Matriz de decisión                                                      │
+│     └─ FAQ - Preguntas frecuentes                                              │
+│     └─ Checklist de validación completa                                        │
+│     └─ Errores más comunes                                                     │
+│     └─ Plantilla de reporte rápido                                             │
+│                                                                                  │
+│     LEER PRIMERO PARA:                                                         │
+│     ✓ Primeras 2 tesis (aprender el proceso)                                   │
+│     ✓ Entrenar otros revisores                                                 │
+│     ✓ Entender flujo completo                                                  │
+│                                                                                  │
+├────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  🔍 AGENTE_VALIDACION_NORMAS_APA_7ma.md (35 KB)    VALIDACIÓN EXHAUSTIVA (30') │
+│                                                                                  │
+│     SECCIÓN 1: FORMATO GENERAL DEL DOCUMENTO                                   │
+│     ├─ Configuración de página (papel, márgenes)                               │
+│     ├─ Tipografía (fonts, tamaños)                                             │
+│     ├─ Espaciado (interlineado, párrafos)                                      │
+│     ├─ Alineación y sangría                                                    │
+│     └─ Abreviaturas permitidas                                                 │
+│                                                                                  │
+│     SECCIÓN 2: ESTRUCTURA DEL DOCUMENTO                                        │
+│     ├─ Orden de elementos (portada, resumen, referencias, etc.)               │
+│     ├─ Página de presentación (datos requeridos)                              │
+│     ├─ Resumen (extensión, formato)                                            │
+│     ├─ Palabras clave (cantidad, formato)                                      │
+│     └─ Contenido/Cuerpo del texto                                              │
+│                                                                                  │
+│     SECCIÓN 3: NIVELES DE TÍTULOS (Máx. 5 niveles)                            │
+│     ├─ Nivel 1: Centrado en negrita                                            │
+│     ├─ Nivel 2: Alineado izquierda, negrita                                    │
+│     ├─ Nivel 3: Alineado izquierda, negrita y cursiva                         │
+│     ├─ Nivel 4: Sangría, negrita, punto final                                  │
+│     ├─ Nivel 5: Sangría, negrita, cursiva, punto                               │
+│     └─ Mayúsculas coherentes                                                   │
+│                                                                                  │
+│     SECCIÓN 4: CITACIONES ⭐ CRÍTICA                                            │
+│     ├─ Citas textuales cortas (< 40 palabras)                                 │
+│     │  └─ Formato narrativo y parentético                                      │
+│     │                                                                            │
+│     ├─ Citas textuales largas (≥ 40 palabras)                                 │
+│     │  └─ Sangría, sin comillas, punto antes paréntesis                        │
+│     │                                                                            │
+│     ├─ Parafraseo (palabras propias, NO comillas)                             │
+│     │                                                                            │
+│     ├─ Reglas por número de autores                                            │
+│     │  ├─ Un autor: López (2019)                                               │
+│     │  ├─ Dos autores: García y Méndez (2017)                                  │
+│     │  └─ Tres o más: Morrison et al. (2015)                                   │
+│     │                                                                            │
+│     └─ Casos especiales                                                        │
+│        ├─ Múltiples trabajos en paréntesis                                     │
+│        ├─ Mismo autor, diferentes años                                         │
+│        ├─ Mismo autor, mismo año (a, b, c...)                                 │
+│        ├─ Sin autor (primeras palabras título)                                 │
+│        ├─ Sin fecha (s.f.)                                                     │
+│        ├─ Material sin paginación (párr., encabezados)                        │
+│        ├─ Cita de cita (evitar si es posible)                                 │
+│        └─ Autor corporativo                                                    │
+│                                                                                  │
+│     SECCIÓN 5: REFERENCIAS BIBLIOGRÁFICAS ⭐ CRÍTICA                            │
+│     ├─ Características generales                                                │
+│     │  ├─ Título "Referencias" centrado, negrita                               │
+│     │  ├─ Orden alfabético por apellido primer autor                           │
+│     │  ├─ Sangría francesa 1.27 cm                                             │
+│     │  └─ Interlineado 2.0                                                     │
+│     │                                                                            │
+│     ├─ Elementos básicos: Autor, Fecha, Título, Fuente                        │
+│     │                                                                            │
+│     ├─ FORMATOS POR TIPO DE FUENTE:                                            │
+│     │  ├─ Libro con autor                                                      │
+│     │  ├─ Libro con editor                                                     │
+│     │  ├─ Libro electrónico                                                    │
+│     │  ├─ Libro con traducción                                                 │
+│     │  ├─ Capítulo de libro                                                    │
+│     │  ├─ Artículo científico (journal)                                        │
+│     │  ├─ Periódico                                                            │
+│     │  ├─ Revista/Magazine                                                     │
+│     │  ├─ Informe gubernamental                                                │
+│     │  ├─ Simposio/congreso/conferencia                                        │
+│     │  ├─ Tesis/trabajo de grado                                               │
+│     │  ├─ Página web                                                           │
+│     │  ├─ Película/cinta cinematográfica                                       │
+│     │  ├─ Serie de televisión                                                  │
+│     │  ├─ Video (YouTube, etc.)                                                │
+│     │  ├─ Seminario web grabado                                                │
+│     │  ├─ Podcast                                                              │
+│     │  ├─ Publicaciones en redes sociales (Tweet, Facebook, Instagram)        │
+│     │  └─ Referencias legales (sentencias, leyes, tratados)                   │
+│     │                                                                            │
+│     └─ Validación cruzada citas ↔ referencias                                 │
+│                                                                                  │
+│     SECCIÓN 6: TABLAS Y FIGURAS                                                │
+│     ├─ TABLAS                                                                   │
+│     │  ├─ Etiqueta (Tabla 1) en negrita                                        │
+│     │  ├─ Título en cursiva                                                    │
+│     │  ├─ Contenido claro, legible                                             │
+│     │  ├─ Encabezados descriptivos centrados                                   │
+│     │  ├─ Datos estadísticos con intervalos/valores p                         │
+│     │  └─ Nota con descripción y crédito de fuente                             │
+│     │                                                                            │
+│     └─ FIGURAS                                                                  │
+│        ├─ Etiqueta (Figura 1) en negrita                                       │
+│        ├─ Título en cursiva                                                    │
+│        ├─ Imagen/gráfico de alta resolución                                    │
+│        ├─ Elementos etiquetados claramente                                     │
+│        ├─ Fuente sin serifa (8-14 puntos)                                      │
+│        └─ Nota con descripción y crédito de fuente                             │
+│                                                                                  │
+│     SECCIÓN 7: ADAPTACIONES AL ESPAÑOL                                         │
+│     ├─ Conectores: "y" (NO "&") en narrativas                                 │
+│     ├─ Mayúsculas: Minúsculas excepto inicio y nombres propios                │
+│     ├─ Fechas: (año, día de mes, mes) ej. (2020, 23 de junio)                │
+│     ├─ Meses: Minúscula inicial                                                │
+│     ├─ Números ordinales: (3.ª ed.) NO (3rd ed.)                              │
+│     └─ Puntuación: Según normas RAE                                            │
+│                                                                                  │
+│     PLANTILLA DE REPORTE INCLUIDA:                                             │
+│     └─ Para documentar hallazgos exhaustivamente                                │
+│                                                                                  │
+│     IDEAL PARA:                                                                │
+│     ✓ Validación exhaustiva de cualquier tesis                                 │
+│     ✓ Cuando hay más de 5 problemas                                            │
+│     ✓ Documentación completa                                                   │
+│     ✓ Casos complejos                                                          │
+│                                                                                  │
+├────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  📊 PDF - FIA_Normas APA 7ma edicion.pdf                      REFERENCIA OFICIAL│
+│     └─ Normas APA Séptima Edición Completas (2019)                            │
+│     └─ Adaptadas al español                                                    │
+│     └─ Consultar durante validaciones                                          │
+│                                                                                  │
+└────────────────────────────────────────────────────────────────────────────────┘
+
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                          FLUJO DE USO RECOMENDADO                              ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+Para CADA TESIS a validar:
+
+┌─ PASO 1: REVISIÓN PRELIMINAR RÁPIDA (5-10 min)
+│  ├─ Usar: CHECKLIST_RAPIDA_APA_7ma.md
+│  ├─ Evaluar: 6 secciones principales
+│  ├─ Marcar: ✓ OK / ⚠ Observaciones / ✗ Crítico
+│  └─ Resultado: Decidir si continuar con validación completa
+│
+├─ PASO 2: VALIDACIÓN DETALLADA COMPLETA (30-60 min)
+│  ├─ Usar: AGENTE_VALIDACION_NORMAS_APA_7ma.md
+│  ├─ Revisar: 7 secciones exhaustivamente
+│  ├─ Documentar: Todos los hallazgos
+│  ├─ Generar: Reporte con plantilla incluida
+│  └─ Resultado: % de conformidad (90-100% / 75-89% / <75%)
+│
+├─ PASO 3: DECISIÓN Y COMUNICACIÓN
+│  ├─ 90-100% CONFORME → APROBAR FINAL
+│  ├─ 75-89% OBSERVACIONES → CORRECCIONES MENORES (3-5 días)
+│  └─ <75% NO CONFORME → CORRECCIONES IMPORTANTES (7-10 días)
+│
+└─ PASO 4: RE-VALIDACIÓN (SI APLICA)
+   ├─ Usar: CHECKLIST_RAPIDA (para secciones corregidas)
+   ├─ Verificar: Solo cambios realizados
+   └─ Aprobar: Cuando esté 100% conforme
+
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                          PRIMEROS PASOS AHORA                                  ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+1️⃣  Abre y LEE:
+    📄 README_INICIO_AQUI.md (10 minutos)
+
+2️⃣  Descarga/imprime:
+    📖 INSTRUCCIONES_USO_AGENTE_APA.md
+    ⚡ CHECKLIST_RAPIDA_APA_7ma.md
+
+3️⃣  Guarda para consulta:
+    🔍 AGENTE_VALIDACION_NORMAS_APA_7ma.md
+    📊 PDF de Normas APA 7ma
+
+4️⃣  Toma la siguiente tesis:
+    ✓ Inicia con CHECKLIST_RAPIDA
+    ✓ Sigue con AGENTE_VALIDACION si es necesario
+    ✓ Genera reporte
+
+5️⃣  Comunica resultados:
+    ✓ Si OK → Aprobación final
+    ✓ Si con observaciones → Correcciones menores
+    ✓ Si crítico → Correcciones importantes
+
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                      INFORMACIÓN DEL SISTEMA                                  ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+Nombre del Sistema:        Sistema de Validación APA 7ma Edición
+Basado en:                 Normas APA Séptima Edición (2019)
+Adaptado a:                Español (Normas RAE)
+Documentos Incluidos:      4 archivos Markdown + 1 PDF
+Tamaño Total:              ~68 KB
+Tiempo de Aprendizaje:     20-30 minutos (primera vez)
+Tiempo de Validación:      5-60 min/documento (según profundidad)
+Versión:                   1.0
+Creado:                    2026-06-27
+Diseñado para:             SAP-105 Mtra Mary
+
+Objetivo Principal:        Garantizar conformidad APA 7ma antes de entrega
+                           de tesis, evitando rechazos del tribunal
+
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                         ¡SISTEMA LISTO PARA USAR!                             ║
+║                                                                                 ║
+║  Tienes todo lo necesario para validar tesis y garantizar conformidad APA.     ║
+║  Cada documento pasará por un filtro exhaustivo antes de ser entregado.        ║
+║                                                                                 ║
+║  ✨ COMIENZA AHORA → Abre README_INICIO_AQUI.md ✨                             ║
+╚════════════════════════════════════════════════════════════════════════════════╝
