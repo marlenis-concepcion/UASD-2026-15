@@ -34,6 +34,9 @@ __pycache__/
 # Comprobantes y boletos privados
 **/Festiva_order_ticket*.pdf
 
+# Invitaciones de calendario con datos de reuniones
+**/*.ics
+
 # Configuración de editores
 .vscode/
 .idea/
