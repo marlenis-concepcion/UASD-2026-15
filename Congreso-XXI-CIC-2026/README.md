@@ -11,11 +11,6 @@ Material de la presentación **“Transformación del perfil profesional en la e
 - `PresentacionLista/Plan 14 - 5250 Ingenieria de Software II.pdf`
 - `PresentacionLista/Caso_Practico_Actualizacion_Curricular_IA_INF522_INF525.md`
 
-## Exclusiones
+## Alcance de esta carpeta
 
-Este repositorio no incluye:
-
-- El taller QA pendiente de depuración.
-- El seminario de investigación, porque pertenece a otro repositorio.
-- Dependencias locales, metadatos de Git, archivos temporales ni rutas privadas de la computadora.
-- Borradores, fuentes, scripts y materiales auxiliares guardados localmente en `BorradorGeneral/`.
+Esta carpeta contiene únicamente la versión final de la presentación, los programas académicos utilizados y el caso práctico. Los borradores, dependencias locales, metadatos de Git, archivos temporales y rutas privadas permanecen fuera de la publicación.

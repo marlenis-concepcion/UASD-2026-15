@@ -20,7 +20,6 @@ Carpeta de trabajo docente para organizar recursos, actividades, agentes y conte
 - `05_rubricas`: rubricas, listas de cotejo y criterios de evaluacion.
 - `06_agentes`: definicion de agentes, prompts del sistema y flujos de trabajo.
 - `07_contenido_generado`: borradores generados para clases, foros, tareas y retroalimentacion.
-- `08_estudiantes_y_evaluacion`: seguimiento, calificaciones exportadas y observaciones.
 - `09_exportaciones`: archivos listos para subir a Moodle/UASDVirtual.
 
 ## Flujo sugerido
@@ -32,3 +31,6 @@ Carpeta de trabajo docente para organizar recursos, actividades, agentes y conte
 5. Usar los agentes de `06_agentes` para generar borradores.
 6. Pasar solo versiones revisadas a `09_exportaciones`.
 
+## Privacidad
+
+Esta copia pública no incluye listas de estudiantes, correos, calificaciones, invitaciones privadas de reuniones ni archivos de texto con datos sensibles.

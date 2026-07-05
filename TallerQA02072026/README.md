@@ -82,6 +82,10 @@ Cada nota comienza con el tiempo sugerido para esa diapositiva.
 
 Este archivo permite regenerar la presentación y conserva la estructura, los textos, el diseño y las notas del orador.
 
+## Alcance de esta carpeta
+
+Se publica una sola presentación final y su generador. Las imágenes PNG, listas de correos, comprobantes de boletos, copias de respaldo y otros datos privados permanecen fuera del repositorio.
+
 ## Fuentes principales
 
 - World Economic Forum. *Future of Jobs Report 2025*. https://www.weforum.org/publications/the-future-of-jobs-report-2025/
