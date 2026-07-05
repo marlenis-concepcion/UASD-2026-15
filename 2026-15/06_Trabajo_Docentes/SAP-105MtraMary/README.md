@@ -28,8 +28,8 @@ Este expediente convierte el programa oficial de SAP-105 en una propuesta docent
 
 - [Portal web de SAP-105](index.html)
 - [Reglas de trabajo y protección del expediente](REGLAS_DE_TRABAJO.md)
-- [Agente de validación APA 7](../../SAP-105Mtra%20Mary/AGENTE_VALIDACION_NORMAS_APA_7ma.md)
-- [Checklist rápida APA 7](../../SAP-105Mtra%20Mary/CHECKLIST_RAPIDA_APA_7ma.md)
+- [Agente de validación APA 7](../../05_Agente_APA/AGENTE_VALIDACION_NORMAS_APA_7ma.md)
+- [Checklist rápida APA 7](../../05_Agente_APA/CHECKLIST_RAPIDA_APA_7ma.md)
 
 ## Flujo de agentes aplicado
 

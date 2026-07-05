@@ -33,5 +33,4 @@ Ante conflicto o duda, el agente se detiene, muestra las dos reglas y solicita v
 
 ## Inmutabilidad de los agentes
 
-Los archivos de `PruebaPersonal/agentes/` son plantillas protegidas. Ejecutar un agente significa consultar sus instrucciones y guardar la salida en `TrabajoDocentes/<caso>/`; nunca significa editar el archivo del agente. Esta carpeta solo puede cambiarse mediante una solicitud explícita de la propietaria del proyecto.
-
+Los archivos de `2026-15/02_Agentes_Rediseno_Curricular/` son plantillas protegidas. Ejecutar un agente significa consultar sus instrucciones y guardar la salida en `2026-15/06_Trabajo_Docentes/<caso>/`; nunca significa editar el archivo del agente. Esta carpeta solo puede cambiarse mediante una solicitud explícita de la propietaria del proyecto.

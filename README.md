@@ -114,19 +114,23 @@ This project provides practical evidence of experience in:
 
 | Ruta / Path | Contenido / Contents |
 |---|---|
-| `PruebaPersonal/` | Metodología, presentación y recursos normativos del taller / Workshop methodology, presentation, and regulatory resources |
-| `TrabajoDocentes/` | Casos de rediseño de asignaturas / Faculty course-redesign cases |
-| `TrabajoDocentes/SAP-105MtraMary/` | Expediente completo y portal web de SAP-105 / Complete SAP-105 teaching package and web portal |
-| `SAP-105Mtra Mary/` | Sistema de validación APA 7 / APA 7 validation system |
-| `IngenieriaIndustrialYisairis/` | Procedimientos y recursos de ingeniería industrial / Industrial engineering procedures and resources |
+| `2026-15/01_Presentacion/` | Presentación única, metodología y guion / Single presentation, methodology, and script |
+| `2026-15/02_Agentes_Rediseno_Curricular/` | Agentes docentes / Teaching agents |
+| `2026-15/03_Programas_y_Normativas/` | Programas y fuentes normativas / Programs and regulatory sources |
+| `2026-15/04_Ingenieria_Industrial/` | Procedimientos de ingeniería industrial / Industrial engineering procedures |
+| `2026-15/05_Agente_APA/` | Sistema de validación APA 7 / APA 7 validation system |
+| `2026-15/06_Trabajo_Docentes/` | Casos de rediseño de asignaturas / Faculty course-redesign cases |
+| `2026-15/07_Congreso_XXI_CIC_2026/` | Presentación y materiales públicos del Congreso XXI CIC 2026 / Public Congress materials |
 
 ## Productos destacados / Featured deliverables
 
-- [Portal web de SAP-105](TrabajoDocentes/SAP-105MtraMary/index.html)
-- [Programa docente SAP-105](TrabajoDocentes/SAP-105MtraMary/03_planificacion/PROGRAMA_DOCENTE_2026-20.md)
-- [Sistema de validación APA 7](SAP-105Mtra%20Mary/README_INICIO_AQUI.md)
-- [Procedimiento de solicitud de vacaciones](IngenieriaIndustrialYisairis/PROCEDIMIENTO_SOLICITUD_VACACIONES_2028.md)
-- [Presentación web del procedimiento](IngenieriaIndustrialYisairis/PROCEDIMIENTO.html)
+- [Presentación del taller](2026-15/01_Presentacion/Taller_Rediseno_Academico_IA.pptx)
+- [Portal web de SAP-105](2026-15/06_Trabajo_Docentes/SAP-105MtraMary/index.html)
+- [Programa docente SAP-105](2026-15/06_Trabajo_Docentes/SAP-105MtraMary/03_planificacion/PROGRAMA_DOCENTE_2026-20.md)
+- [Sistema de validación APA 7](2026-15/05_Agente_APA/README_INICIO_AQUI.md)
+- [Procedimiento de solicitud de vacaciones](2026-15/04_Ingenieria_Industrial/PROCEDIMIENTO_SOLICITUD_VACACIONES_2028.md)
+- [Presentación web del procedimiento](2026-15/04_Ingenieria_Industrial/PROCEDIMIENTO.html)
+- [Presentación final del Congreso XXI CIC 2026](2026-15/07_Congreso_XXI_CIC_2026/PresentacionLista/Transformacion_Perfil_Profesional_Automatizacion_IA_CIC2026_FINAL.pptx)
 
 ## Principios de uso / Working principles
 

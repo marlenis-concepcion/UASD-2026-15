@@ -4,11 +4,11 @@
 
 | Fuente | Ubicación original | Uso | Estado |
 |---|---|---|---|
-| Programa oficial SAP-105 | `TrabajoDocentes/Programa SAP 105.docx` | Datos, competencias, contenidos, metodología, evaluación y plan de 16 semanas | No se sobrescribió |
+| Programa oficial SAP-105 | `2026-15/06_Trabajo_Docentes/Programa SAP 105.docx` | Datos, competencias, contenidos, metodología, evaluación y plan de 16 semanas | No se sobrescribió |
 | Captura del apartado “Contenidos” | Aportada por la docente el 27 de junio de 2026 | Confirmación visual de las siete unidades | Fuente de contexto |
-| Estatuto Orgánico UASD | `PruebaPersonal/04_estatuto_organico_uasd_vigente.pdf` | Autoridad académica, función docente y derechos/deberes | Consultado mediante matriz normativa |
-| Reglamento de Rendimiento Académico Estudiantil | `PruebaPersonal/referencias_normativas/rendimiento_academico_estudiantil_0.pdf` | Evaluación, calificación, revisión y plazos | Consultado mediante matriz normativa |
-| Reglamento de Carrera Académica | `PruebaPersonal/referencias_normativas/Reglamento acadaemico.pdf` | Deberes, objetividad, privacidad y actualización docente | Consultado mediante matriz normativa |
+| Estatuto Orgánico UASD | `2026-15/03_Programas_y_Normativas/04_estatuto_organico_uasd_vigente.pdf` | Autoridad académica, función docente y derechos/deberes | Consultado mediante matriz normativa |
+| Reglamento de Rendimiento Académico Estudiantil | `2026-15/03_Programas_y_Normativas/referencias_normativas/rendimiento_academico_estudiantil_0.pdf` | Evaluación, calificación, revisión y plazos | Consultado mediante matriz normativa |
+| Reglamento de Carrera Académica | `2026-15/03_Programas_y_Normativas/referencias_normativas/Reglamento acadaemico.pdf` | Deberes, objetividad, privacidad y actualización docente | Consultado mediante matriz normativa |
 | Normas APA 7 FIA/UASD | Recurso local del agente `uasd-apa7-agent` | Citas, referencias, tablas, figuras y formato académico | Aplicado a referencias y consignas |
 
 ## Fuentes académicas y profesionales
@@ -46,4 +46,3 @@ Zotero. (s. f.). *The basics*. https://www.zotero.org/support/quick_start_guide
 - Registrar la ecuación de búsqueda, filtros, fecha y decisión de inclusión/exclusión.
 - No confundir una cita bien formateada con una fuente de calidad.
 - Verificar enlaces y versiones antes de cada período académico.
-

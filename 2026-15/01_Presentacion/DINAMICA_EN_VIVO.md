@@ -26,7 +26,7 @@ Elegir un programa que:
 
 Si nadie comparte un documento o surge un problema técnico, utilizar uno de los programas de programación guardados en `fwdprogramasasignaturasdeinformatica/`.
 
-Antes de comenzar, crear un caso independiente en `../TrabajoDocentes/AAAA-MM-DD_asignatura_docente/`. Copiar allí la fuente y guardar todos los resultados en sus subcarpetas. No modificar `agentes/` durante la demostración.
+Antes de comenzar, crear un caso independiente en `../06_Trabajo_Docentes/AAAA-MM-DD_asignatura_docente/`. Copiar allí la fuente y guardar todos los resultados en sus subcarpetas. No modificar `../02_Agentes_Rediseno_Curricular/` durante la demostración.
 
 ## Preguntas iniciales al docente voluntario
 

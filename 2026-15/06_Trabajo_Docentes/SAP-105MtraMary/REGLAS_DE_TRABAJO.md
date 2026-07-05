@@ -2,7 +2,7 @@
 
 ## 1. Carpeta de agentes congelada
 
-La carpeta `PruebaPersonal/agentes/` contiene la arquitectura oficial de agentes docentes del taller.
+La carpeta `2026-15/02_Agentes_Rediseno_Curricular/` contiene la arquitectura oficial de agentes docentes del taller.
 
 - No se modifica, renombra, elimina ni reorganiza ningún archivo de esta carpeta.
 - No se agregan nuevas reglas, prompts o agentes sin una instrucción explícita de la propietaria del proyecto.
@@ -13,11 +13,11 @@ La carpeta `PruebaPersonal/agentes/` contiene la arquitectura oficial de agentes
 
 Cada programa enviado por un docente se trabaja en una carpeta independiente dentro de:
 
-`TrabajoDocentes/`
+`2026-15/06_Trabajo_Docentes/`
 
 Formato recomendado:
 
-`TrabajoDocentes/AAAA-MM-DD_asignatura_docente/`
+`2026-15/06_Trabajo_Docentes/AAAA-MM-DD_asignatura_docente/`
 
 Cada caso puede contener:
 
@@ -41,4 +41,3 @@ Cada caso puede contener:
 ## 4. Human in the loop
 
 Los agentes producen propuestas dentro de la carpeta del caso. El docente propietario valida contenidos, actividades, instrumentos, calificaciones y retroalimentaciones antes de utilizarlos.
-

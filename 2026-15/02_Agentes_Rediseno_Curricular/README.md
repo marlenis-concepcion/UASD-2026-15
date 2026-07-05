@@ -41,4 +41,4 @@ Cada salida debe indicar si contiene:
 
 ## Estado protegido
 
-Esta carpeta queda congelada. No debe modificarse por solicitudes relacionadas con programas, clases o unidades concretas. Cada caso nuevo se desarrolla en `../../TrabajoDocentes/`, conforme a `../../REGLAS_DE_TRABAJO.md`. Solo una instrucción explícita de la propietaria autoriza cambios en estos agentes.
+Esta carpeta queda congelada. No debe modificarse por solicitudes relacionadas con programas, clases o unidades concretas. Cada caso nuevo se desarrolla en `../06_Trabajo_Docentes/`, conforme a sus reglas de trabajo. Solo una instrucción explícita de la propietaria autoriza cambios en estos agentes.

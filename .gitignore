@@ -25,6 +25,12 @@ __pycache__/
 *.pem
 *.key
 
+# Archivos de texto con datos sensibles, participantes o correos
+**/*.txt
+
+# Capturas e imágenes PNG locales
+**/*.png
+
 # Configuración de editores
 .vscode/
 .idea/
