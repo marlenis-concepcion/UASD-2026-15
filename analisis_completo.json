@@ -1,0 +1,78 @@
+{
+  "objetivos": {
+    "obj1": {
+      "disponibilidad_si": 52,
+      "disponibilidad_no": 17,
+      "disponibilidad_nosabe": 11,
+      "total": 80
+    },
+    "obj2": {
+      "media_frecuencia": 2.93,
+      "distribucion": {
+        "4-5 veces": 20,
+        "2-3 veces": 17,
+        "Nunca": 16,
+        "Más de 5 veces": 15,
+        "1 vez": 12
+      }
+    },
+    "obj3": {
+      "p4_planificacion": 2.89,
+      "p5_investigacion": 2.71,
+      "p6_evaluacion": 2.96,
+      "p7_presentacion": 2.71,
+      "media_general": 2.82
+    },
+    "obj4_5": {
+      "p8_comprension": 3.01,
+      "p9_retencion": 2.96,
+      "p10_vida_diaria": 3.15,
+      "p11_aplicacion": 3.02,
+      "p12_expresion": 2.96,
+      "media_general": 3.02
+    },
+    "obj6": {
+      "persistencia": 2.98
+    },
+    "obj7": {
+      "interes_inicial": 3.31,
+      "atencion_comparada": 3.56,
+      "pct_positivo": 55.0
+    },
+    "obj8": {
+      "participacion": 3.09,
+      "concentracion": 3.02,
+      "compromiso_general": 3.06
+    },
+    "obj9": {
+      "consideracion_positiva": 3.22,
+      "deseo_aprender": 3.39,
+      "actitud_general": 3.31,
+      "pct_positivo": 55.0
+    }
+  },
+  "correlaciones": {
+    "disponibilidad_rendimiento": 0.544,
+    "disponibilidad_motivacion": 0.67,
+    "frecuencia_rendimiento": 0.318,
+    "proposito_rendimiento": 0.272,
+    "motivacion_rendimiento": 0.299
+  },
+  "por_centro": {
+    "Federico Augusto Gonzalez": {
+      "n": 40,
+      "disponibilidad_pct": 72.5,
+      "frecuencia_media": 3.1,
+      "rendimiento": 3.06,
+      "motivacion": 3.45
+    },
+    "Juan Bautista De la Cruz": {
+      "n": 40,
+      "disponibilidad_pct": 57.5,
+      "frecuencia_media": 2.76,
+      "rendimiento": 2.99,
+      "motivacion": 3.08
+    }
+  },
+  "muestra_total": 80
+}
