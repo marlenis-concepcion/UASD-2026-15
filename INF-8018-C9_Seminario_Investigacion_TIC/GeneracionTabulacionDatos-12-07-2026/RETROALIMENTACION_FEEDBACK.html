@@ -213,6 +213,31 @@
             margin-top: 10px;
         }
 
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .link-section {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
         @media print {
             body {
                 background: white;
@@ -382,6 +407,19 @@
                 <strong>📌 SIGUIENTE PASO</strong>
                 <br><br>
                 Cuando tengas los datos REALES, mantén esta estructura de análisis. Tu plan es reproducible y escalable. Excelente trabajo de preparación.
+            </div>
+
+            <!-- LINK A REPORTE -->
+            <div class="link-section">
+                <strong style="font-size: 16px; color: #667eea;">📊 VER ANÁLISIS COMPLETO</strong>
+                <br><br>
+                <a href="REPORTE_ANALISIS_MILTON.html" class="link-button">
+                    Abrir Reporte Interactivo
+                </a>
+                <br>
+                <span style="font-size: 12px; color: #666; display: block; margin-top: 15px;">
+                    Incluye gráficas interactivas, análisis correlacional y conclusiones detalladas
+                </span>
             </div>
 
             <!-- CALIFICACIÓN -->
