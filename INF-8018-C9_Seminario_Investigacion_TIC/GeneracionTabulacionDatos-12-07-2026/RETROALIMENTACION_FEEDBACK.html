@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retroalimentación - Trabajo Milton Nova</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .meta-item {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .meta-value {
+            color: #333;
+            font-size: 15px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            background: #667eea;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .general-comment {
+            background: #f0f4ff;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .item-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .item-text {
+            flex: 1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .mejora {
+            padding: 15px 20px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .mejora::before {
+            content: "→ ";
+            font-weight: 600;
+            color: #ffc107;
+            margin-right: 8px;
+        }
+
+        .recomendacion {
+            padding: 15px 20px;
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            color: #333;
+            line-height: 1.6;
+            counter-increment: rec-counter;
+        }
+
+        .recomendacion::before {
+            content: counter(rec-counter) ". ";
+            font-weight: 600;
+            color: #4caf50;
+            margin-right: 8px;
+        }
+
+        .recomendaciones-section {
+            counter-reset: rec-counter;
+        }
+
+        .siguiente-paso {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .calificacion {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .firma {
+            font-weight: 600;
+            color: #667eea;
+            margin-top: 10px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .meta-info {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>📋 RETROALIMENTACIÓN ACADÉMICA</h1>
+            <p>Evaluación del Trabajo Colaborativo - Unidad V</p>
+        </div>
+
+        <!-- META INFO -->
+        <div class="meta-info">
+            <div class="meta-item">
+                <div class="meta-label">Estudiante</div>
+                <div class="meta-value">Milton Raúl Nova González</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Evaluadora</div>
+                <div class="meta-value">Natali Beltre Ortiz</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Fecha</div>
+                <div class="meta-value">12 de julio de 2026</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Actividad</div>
+                <div class="meta-value">Tarea 5.3 - Cierre Unidad V</div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="content">
+
+            <!-- COMENTARIO GENERAL -->
+            <div class="section">
+                <div class="general-comment">
+                    <strong>Milton,</strong>
+                    <br><br>
+                    Excelente trabajo realizado en esta unidad. Tu investigación sobre <strong>"Impacto de herramientas tecnológicas en rendimiento académico y motivación de estudiantes de 3er grado"</strong> demuestra claridad metodológica y rigor académico. A continuación, mis observaciones:
+                </div>
+            </div>
+
+            <!-- FORTALEZAS -->
+            <div class="section">
+                <div class="section-title">✅ FORTALEZAS IDENTIFICADAS</div>
+                <div class="items-list">
+                    <div class="item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-text">
+                            <div class="item-title">Instrumento de investigación</div>
+                            Bien estructurado, con 18 preguntas claramente alineadas con los 9 objetivos específicos. La escala Likert 1-5 es apropiada para la población.
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-text">
+                            <div class="item-title">Consentimiento informado</div>
+                            Profesional, completo y respeta protección de datos. Incluye explícitamente derechos de los centros educativos y confidencialidad de menores.
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-text">
+                            <div class="item-title">Plan metodológico</div>
+                            Estructurado y detallado. La propuesta de análisis mixto (cuantitativo + cualitativo) fortalece la investigación.
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-text">
+                            <div class="item-title">Tabulación de datos</div>
+                            Los 80 registros sintéticos generados son realistas y mantienen coherencia con variables definidas. Las correlaciones reportadas (r=0.612 Disponibilidad→Motivación) tienen sentido teórico.
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-text">
+                            <div class="item-title">Análisis estadístico</div>
+                            Incluye descriptivas, correlaciones, análisis comparativo por centro educativo. Buena comprensión de medidas de tendencia central y desviación estándar.
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-text">
+                            <div class="item-title">Presentación</div>
+                            El reporte HTML interactivo es profesional. Gráficos claros, navegable, listo para presentar a directivos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PUNTOS A MEJORAR -->
+            <div class="section">
+                <div class="section-title">⚠️ PUNTOS A MEJORAR</div>
+                <div class="items-list">
+                    <div class="mejora">
+                        <strong>Limitaciones:</strong> Amplía más las 6 limitaciones mencionadas. Por ejemplo: ¿Cómo podría afectar el sesgo de autoinforme? ¿Qué variables no controlaste?
+                    </div>
+
+                    <div class="mejora">
+                        <strong>Marco teórico:</strong> El reporte presenta principalmente datos, pero falta fundamentación teórica más robusta. Incorpora citas de autores sobre impacto de TIC (Prensky, OCDE, etc.).
+                    </div>
+
+                    <div class="mejora">
+                        <strong>Validez del instrumento:</strong> No mencionas si piloteaste el instrumento. ¿Calculaste confiabilidad (Alfa de Cronbach)?
+                    </div>
+
+                    <div class="mejora">
+                        <strong>Tamaño de muestra:</strong> 80 es bueno, pero justifica por qué ese número específico. ¿Es suficiente para los grados de libertad en correlaciones?
+                    </div>
+
+                    <div class="mejora">
+                        <strong>Generalizabilidad:</strong> Los datos son sintéticos/de ejemplo. Clarifica en metodología que esto es ilustrativo hasta recopilar datos reales.
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECOMENDACIONES -->
+            <div class="section recomendaciones-section">
+                <div class="section-title">💡 RECOMENDACIONES ESPECÍFICAS</div>
+                <div class="items-list">
+                    <div class="recomendacion">
+                        Incorpora 3-4 referencias bibliográficas APA7 sobre impacto de TIC en educación primaria.
+                    </div>
+
+                    <div class="recomendacion">
+                        En conclusiones, responde explícitamente: ¿Impactan las TIC el rendimiento? Tu dato (r=0.612) sugiere moderado-fuerte, pero la correlación no es causalidad. Sé preciso.
+                    </div>
+
+                    <div class="recomendacion">
+                        En recomendaciones para docentes, incluye estrategias concretas basadas en tus hallazgos. No solo "usar más TIC" sino "usar TIC con propósito pedagógico" (tu correlación 0.587 lo sugiere).
+                    </div>
+
+                    <div class="recomendacion">
+                        Crea una versión simplificada del reporte para los directores de los centros (máximo 3 páginas) con solo los hallazgos clave.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIGUIENTE PASO -->
+            <div class="siguiente-paso">
+                <strong>📌 SIGUIENTE PASO</strong>
+                <br><br>
+                Cuando tengas los datos REALES, mantén esta estructura de análisis. Tu plan es reproducible y escalable. Excelente trabajo de preparación.
+            </div>
+
+            <!-- CALIFICACIÓN -->
+            <div class="calificacion">
+                ⭐ 5/5 puntos
+                <div style="font-size: 14px; margin-top: 10px; opacity: 0.95;">
+                    Trabajo completo, profesional, metodológicamente sólido
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="firma">Natali Beltre Ortiz</div>
+            <div>Docente - Seminario de Investigación TIC</div>
+            <div style="margin-top: 15px; font-size: 12px; color: #999;">
+                Retroalimentación generada: 12 de julio de 2026
+            </div>
+        </div>
+    </div>
+</body>
+</html>
