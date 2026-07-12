@@ -1,0 +1,44 @@
+BEGIN:VCALENDAR
+PRODID:-//zoom.us//iCalendar Event//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+CLASS:PUBLIC
+BEGIN:VTIMEZONE
+TZID:America/Caracas
+LAST-MODIFIED:20260306T231828Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/America/Caracas
+X-LIC-LOCATION:America/Caracas
+BEGIN:STANDARD
+TZNAME:-04
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0400
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20260628T173532Z
+DTSTART;TZID=America/Caracas:20260517T210000
+DTEND;TZID=America/Caracas:20260518T030000
+SUMMARY:INF-8237 Ciencias de Datos I\, 2026-10 Dr. Del Orbe
+UID:EVENTciaCllj4Q9ivnY0mLS4Jsg@zoom.us
+DESCRIPTION:Direccion General UASD Virtual is inviting you to a scheduled
+  Zoom meeting.\nJoin Zoom Meeting\nhttps://us02web.zoom.us/j/86503076859
+ ?pwd=5OsvA1lbra1ql7WXhDCJUwrRbyi2ba.1\n\nMeeting chat link\nhttps://us02
+ web.zoom.us/launch/jc/86503076859\n\nMeeting ID: 865 0307 6859\nPasscode
+ : 310278\n\n---\n\nOne tap mobile\n+18299562188\,\,86503076859# Dominica
+ n Republic\n+18299479220\,\,86503076859# Dominican Republic\n\n\n---\n\n
+ Join by SIP\n• 86503076859@zoomcrc.com\n\nJoin instructions\nhttps://us0
+ 2web.zoom.us/meetings/86503076859/invitations?signature=lTugZX-1RafZg00V
+ d-OWHVz5uk7o983AA2VDm7ZUYgQ\n\n
+TZID:America/Caracas
+LOCATION:https://us02web.zoom.us/j/86503076859?pwd=5OsvA1lbra1ql7WXhDCJUw
+ rRbyi2ba.1
+RRULE:FREQ=WEEKLY;COUNT=7;INTERVAL=1;BYDAY=SU
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
