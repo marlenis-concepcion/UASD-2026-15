@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Impacto de TIC - Milton Nova González</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a5a;
+            --secondary: #2c5aa0;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* PORTADA */
+        .portada {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .portada h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .portada .subtitulo {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .portada .metadata {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portada .metadata-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 6px;
+            backdrop-filter: blur(10px);
+        }
+
+        .portada .metadata-item strong {
+            display: block;
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .portada .metadata-item span {
+            font-size: 1.1em;
+        }
+
+        /* RESUMEN EJECUTIVO */
+        .resumen-ejecutivo {
+            background: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .resumen-ejecutivo h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, var(--light) 0%, white 100%);
+            padding: 20px;
+            border-radius: 6px;
+            border: 2px solid var(--light);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: var(--secondary);
+        }
+
+        .kpi-card .label {
+            font-size: 0.9em;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .kpi-card .valor {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .kpi-card .unidad {
+            font-size: 0.9em;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+
+        /* SECCIONES */
+        .seccion {
+            background: white;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .seccion h2 {
+            color: var(--primary);
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .objetivo-numero {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .contenido-objetivo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .grafico-contenedor {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 6px;
+            min-height: 400px;
+        }
+
+        .analisis-texto {
+            padding: 15px;
+        }
+
+        .analisis-texto h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .analisis-texto p {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .estadisticas {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .estadistica-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .estadistica-item:last-child {
+            border-bottom: none;
+        }
+
+        .estadistica-label {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .estadistica-valor {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* TABLA CORRELACIONES */
+        .tabla-correlaciones {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .tabla-correlaciones th,
+        .tabla-correlaciones td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .tabla-correlaciones th {
+            background: var(--secondary);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tabla-correlaciones tr:hover {
+            background: var(--light);
+        }
+
+        .correlacion-fuerte {
+            background: #d5f4e6;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .correlacion-moderada {
+            background: #fceaa3;
+            color: #d68910;
+            font-weight: bold;
+        }
+
+        .correlacion-debil {
+            background: #fadbd8;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* CONCLUSIONES */
+        .conclusiones {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--success);
+        }
+
+        .conclusiones h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .conclusion-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .conclusion-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid var(--light);
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .contenido-objetivo {
+                grid-template-columns: 1fr;
+            }
+
+            .portada .metadata {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .portada h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .seccion, .resumen-ejecutivo, .conclusiones {
+                page-break-inside: avoid;
+            }
+
+            .grafico-contenedor {
+                height: 300px;
+            }
+        }
+
+        /* TABLA COMPARATIVA */
+        .tabla-comparativa {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .tabla-comparativa th,
+        .tabla-comparativa td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid var(--light);
+        }
+
+        .tabla-comparativa th {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tabla-comparativa td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .tabla-comparativa tr:hover {
+            background: var(--light);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .badge-success {
+            background: #d5f4e6;
+            color: var(--success);
+        }
+
+        .badge-warning {
+            background: #ffeaa7;
+            color: #d68910;
+        }
+
+        .badge-danger {
+            background: #fadbd8;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="container">
+    <div class="portada">
+        <h1>📊 ANÁLISIS DE IMPACTO DE TIC</h1>
+        <p class="subtitulo">Rendimiento Académico y Motivación en Educación Primaria</p>
+
+        <div class="metadata">
+            <div class="metadata-item">
+                <strong>Investigador</strong>
+                <span>Milton Raúl Nova González</span>
+            </div>
+            <div class="metadata-item">
+                <strong>Programa</strong>
+                <span>Master TIC para Docentes</span>
+            </div>
+            <div class="metadata-item">
+                <strong>Muestra</strong>
+                <span>80 Estudiantes</span>
+            </div>
+            <div class="metadata-item">
+                <strong>Año Escolar</strong>
+                <span>2025-2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESUMEN EJECUTIVO -->
+    <div class="resumen-ejecutivo">
+        <h2>📋 RESUMEN EJECUTIVO</h2>
+
+        <p><strong>Hallazgo Principal:</strong> El análisis de 80 estudiantes de 3er grado revela que la disponibilidad de herramientas tecnológicas correlaciona positivamente con el rendimiento académico y la motivación. Se encontró que <strong>el 68.8% de las aulas disponen de dispositivos funcionales</strong>, y cuando están disponibles, los estudiantes reportan mayor comprensión, retención y disposición al aprendizaje.</p>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="label">Disponibilidad TIC</div>
+                <div class="valor">68.8%</div>
+                <div class="unidad">de aulas</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Frecuencia Uso</div>
+                <div class="valor">2.74</div>
+                <div class="unidad">veces/semana</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Rendimiento</div>
+                <div class="valor">3.02</div>
+                <div class="unidad">/5.00</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Motivación</div>
+                <div class="valor">3.31</div>
+                <div class="unidad">/5.00</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 1: DISPONIBILIDAD -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivo 1</div>
+        <h2>Disponibilidad Tecnológica</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-disponibilidad"></div>
+
+            <div class="analisis-texto">
+                <h4>Análisis Cuantitativo</h4>
+                <p>Se evaluó la disponibilidad de dispositivos tecnológicos funcionales en las aulas de los centros Juan Bautista De la Cruz y Federico Augusto González. Los resultados muestran que <strong>55 estudiantes (68.8%) estudian en aulas con dispositivos disponibles</strong>, mientras que 17 (21.3%) en aulas sin disponibilidad y 8 (10.0%) reportaron no saber.</p>
+
+                <h4 style="margin-top: 20px;">Análisis Cualitativo</h4>
+                <p>La disponibilidad de herramientas tecnológicas es fundamental para la integración efectiva de TIC en el currículo. Una disponibilidad del 68.8% sugiere brecha digital significativa que afecta equidad educativa. Los centros con dispositivos disponibles tienen mayor potencial pedagógico.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Con dispositivos:</span>
+                        <span class="estadistica-valor">55 (68.8%)</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Sin dispositivos:</span>
+                        <span class="estadistica-valor">17 (21.3%)</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">No sabe:</span>
+                        <span class="estadistica-valor">8 (10.0%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 2: FRECUENCIA DE USO -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivo 2</div>
+        <h2>Frecuencia de Uso en Actividades Académicas</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-frecuencia"></div>
+
+            <div class="analisis-texto">
+                <h4>Análisis Cuantitativo</h4>
+                <p>La frecuencia de uso semanal de TIC en actividades académicas muestra una distribución concentrada en usos moderados. <strong>La media de 2.74 veces por semana</strong> indica que TIC se integran regularmente pero no de forma intensiva en las prácticas educativas de estos centros.</p>
+
+                <h4 style="margin-top: 20px;">Interpretación Pedagógica</h4>
+                <p>Un uso de 2-4 veces por semana sugiere integración incipiente. Para máximo impacto en rendimiento y motivación, literatura indica frecuencia 3-5 veces semana es óptima. Hay espacio para incrementar integración sin saturación.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Media frecuencia:</span>
+                        <span class="estadistica-valor">2.74 veces/semana</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Moda:</span>
+                        <span class="estadistica-valor">2-3 veces/semana</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Rango:</span>
+                        <span class="estadistica-valor">0 - 6+ veces</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 3: PROPÓSITO PEDAGÓGICO -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivo 3</div>
+        <h2>Propósito Pedagógico del Uso de TIC</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-proposito"></div>
+
+            <div class="analisis-texto">
+                <h4>Análisis por Dimensión</h4>
+                <p>Se evaluaron cuatro propósitos pedagógicos de TIC mediante escala Likert (1=Totalmente en desacuerdo; 5=Totalmente de acuerdo).</p>
+
+                <p><strong>Planificación curricular (3.53/5):</strong> La mayoría de docentes incluyen TIC en su planificación, aunque no sistemáticamente.</p>
+
+                <p><strong>Investigación de contenidos (3.46/5):</strong> TIC se utilizan moderadamente para acceso a información, pero hay oportunidad de fortalecimiento.</p>
+
+                <p><strong>Evaluación formativa (3.24/5):</strong> Área de menor adopción, sugiere capacitación necesaria en evaluación digital.</p>
+
+                <p><strong>Presentación y refuerzo (3.51/5):</strong> Fortaleza en presentación multimedia, refleja uso más común de proyectores/pantallas.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Índice General Propósito:</span>
+                        <span class="estadistica-valor">3.44/5.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 4-5: RENDIMIENTO ACADÉMICO -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivos 4 & 5</div>
+        <h2>Rendimiento Académico Percibido</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-rendimiento"></div>
+
+            <div class="analisis-texto">
+                <h4>Análisis Cuantitativo</h4>
+                <p><strong>Media de rendimiento: 3.02/5.00</strong> indica impacto moderado de TIC en aprendizaje. Desagregado por dimensión:</p>
+
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Comprensión (3.08):</strong> TIC ayudan moderadamente a entender contenidos</li>
+                    <li><strong>Retención (3.18):</strong> Estudiantes recuerdan mejor con TIC</li>
+                    <li><strong>Aplicación (2.95):</strong> Menos transferencia a nuevas situaciones</li>
+                    <li><strong>Expresión (2.88):</strong> Dificultad para explicar lo aprendido</li>
+                </ul>
+
+                <h4 style="margin-top: 20px;">Análisis Cualitativo</h4>
+                <p>Los estudiantes perciben beneficio cognitivo moderado. Fortaleza en comprensión y retención sugiere TIC son efectivas en presentación y fijación. Debilidad en aplicación y expresión indica necesidad de estrategias constructivistas complementarias.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Rendimiento General:</span>
+                        <span class="estadistica-valor">3.02/5.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 6: PERSISTENCIA -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivo 6</div>
+        <h2>Persistencia del Aprendizaje</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-persistencia"></div>
+
+            <div class="analisis-texto">
+                <h4>Hallazgo Principal</h4>
+                <p><strong>Índice de Persistencia: 3.07/5.00</strong></p>
+
+                <p>La persistencia del aprendizaje con TIC muestra valores moderados, sugiriendo que el aprendizaje mediado por tecnología tiene mantenimiento a corto/mediano plazo. Sin embargo, la habilidad para aplicar en contextos nuevos (2.95) es relativamente baja.</p>
+
+                <h4 style="margin-top: 20px;">Implicaciones Pedagógicas</h4>
+                <p>Para mejorar persistencia a largo plazo, se recomienda: (1) Mayor espaciamiento de repeticiones, (2) Elaboración con conexiones a conocimiento previo, (3) Práctica intercalada de transferencia, (4) Reflexión metacognitiva sobre aprendizaje.</p>
+
+                <p>Las TIC facilitan repetición pero docentes deben intencionar aplicación transferible.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Persistencia Promedio:</span>
+                        <span class="estadistica-valor">3.07/5.00</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Aplicación Transferible:</span>
+                        <span class="estadistica-valor">2.95/5.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 7: INTERÉS INICIAL -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivo 7</div>
+        <h2>Interés Inicial Generado por TIC</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-interes"></div>
+
+            <div class="analisis-texto">
+                <h4>Análisis Cuantitativo</h4>
+                <p><strong>Interés inicial: 3.45/5.00</strong> - Moderadamente positivo</p>
+                <p><strong>Atención comparada con tradicional: 3.54/5.00</strong> - TIC capturan mayor atención</p>
+
+                <p><strong>Porcentaje en acuerdo/totalmente acuerdo: 55.0%</strong> - Más de la mitad reporta interés positivo al incluir TIC.</p>
+
+                <h4 style="margin-top: 20px;">Interpretación Pedagógica</h4>
+                <p>El interés generado por TIC es moderado pero superior a actividades tradicionales. Este efecto "novedad" es importante pero no debe confundirse con motivación profunda. Se sugiere que efectividad pedagógica real (mejora cognitiva) potencia interés sostenido más que estímulo superficial.</p>
+
+                <p>Diferencia entre interés inicial y motivación sostenida será evaluada en siguientes objetivos.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Interés Inicial:</span>
+                        <span class="estadistica-valor">3.45/5.00</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Positivos (4-5):</span>
+                        <span class="estadistica-valor">55.0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 8: COMPROMISO SOSTENIDO -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivo 8</div>
+        <h2>Compromiso Sostenido en Actividades con TIC</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-compromiso"></div>
+
+            <div class="analisis-texto">
+                <h4>Análisis Cuantitativo</h4>
+                <p><strong>Participación activa: 3.38/5.00</strong> - Estudiantes participan moderadamente</p>
+                <p><strong>Concentración: 3.15/5.00</strong> - Concentración afectada (distracción digital común)</p>
+                <p><strong>Compromiso General: 3.27/5.00</strong> - Moderado, con oportunidad de mejora</p>
+
+                <h4 style="margin-top: 20px;">Hallazgo Crítico</h4>
+                <p>La <strong>brecha entre participación (3.38) y concentración (3.15)</strong> sugiere que aunque estudiantes participan activamente, su atención se dispersa. Esto es consistente con conocimiento sobre efectos de distracciones digitales (notificaciones, multitarea). </p>
+
+                <p><strong>Recomendación:</strong> Diseño de actividades TIC debe minimizar distracciones, usar navegación guiada, establecer normas de uso responsable.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Participación:</span>
+                        <span class="estadistica-valor">3.38/5.00</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Concentración:</span>
+                        <span class="estadistica-valor">3.15/5.00</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Diferencia:</span>
+                        <span class="estadistica-valor">-0.23 ⚠️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OBJETIVO 9: ACTITUD POSITIVA -->
+    <div class="seccion">
+        <div class="objetivo-numero">Objetivo 9</div>
+        <h2>Actitud Positiva Hacia Herramientas TIC</h2>
+
+        <div class="contenido-objetivo">
+            <div class="grafico-contenedor" id="grafico-actitud"></div>
+
+            <div class="analisis-texto">
+                <h4>Análisis Cuantitativo</h4>
+                <p><strong>Consideración positiva de TIC: 3.59/5.00</strong> - Mayoritariamente positiva</p>
+                <p><strong>Deseo de aprender aumentado: 3.55/5.00</strong> - TIC estimulan motivación</p>
+                <p><strong>Actitud General: 3.57/5.00</strong> - Tendencia positiva clara</p>
+
+                <p><strong>Porcentaje con actitud positiva (4-5): 62.5%</strong> - Mayoría de estudiantes favorecen TIC</p>
+
+                <h4 style="margin-top: 20px;">Análisis Cualitativo</h4>
+                <p>Existe consenso mayoritario de que TIC son valiosas para educación. Esto refleja alineación con nativos digitales (generación Z), quienes encuentran TIC más naturales que tradicional. Actitud positiva es prerequisito para aprendizaje efectivo.</p>
+
+                <p><strong>Conclusión Objetivos:</strong> La actitud positiva (3.57) combinada con motivación moderada-alta (3.31) crea contexto favorable para aprendizaje mediado por TIC. Desafío es capitalizar disposición en diseño pedagógico efectivo.</p>
+
+                <div class="estadisticas">
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Actitud General:</span>
+                        <span class="estadistica-valor">3.57/5.00</span>
+                    </div>
+                    <div class="estadistica-item">
+                        <span class="estadistica-label">Positivos (4-5):</span>
+                        <span class="estadistica-valor">62.5%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANÁLISIS CORRELACIONAL -->
+    <div class="seccion">
+        <h2>🔗 Análisis Correlacional</h2>
+
+        <p>Para comprender relaciones entre variables, se calcularon coeficientes de correlación de Pearson. Interpretación: r ∈ [-1, 1]; valores próximos a ±1 indican relación fuerte.</p>
+
+        <table class="tabla-correlaciones">
+            <thead>
+                <tr>
+                    <th>Variable 1</th>
+                    <th>Variable 2</th>
+                    <th>Correlación (r)</th>
+                    <th>Interpretación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Disponibilidad TIC</td>
+                    <td>Rendimiento Académico</td>
+                    <td class="correlacion-moderada">0.485</td>
+                    <td>Correlación positiva moderada fuerte</td>
+                </tr>
+                <tr>
+                    <td>Disponibilidad TIC</td>
+                    <td>Motivación</td>
+                    <td class="correlacion-fuerte">0.612</td>
+                    <td>Correlación positiva moderada fuerte</td>
+                </tr>
+                <tr>
+                    <td>Frecuencia de Uso</td>
+                    <td>Rendimiento Académico</td>
+                    <td class="correlacion-moderada">0.428</td>
+                    <td>Correlación positiva moderada</td>
+                </tr>
+                <tr>
+                    <td>Propósito Pedagógico</td>
+                    <td>Rendimiento Académico</td>
+                    <td class="correlacion-fuerte">0.587</td>
+                    <td>Correlación positiva moderada fuerte</td>
+                </tr>
+                <tr>
+                    <td>Motivación</td>
+                    <td>Rendimiento Académico</td>
+                    <td class="correlacion-fuerte">0.299</td>
+                    <td>Correlación positiva débil moderada</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 30px; padding: 20px; background: var(--light); border-radius: 6px;">
+            <h4>Interpretación Integrada</h4>
+            <p>✓ <strong>Disponibilidad es factor crítico:</strong> Aulas con dispositivos muestran mayores rendimiento (r=0.485) y motivación (r=0.612).</p>
+            <p>✓ <strong>Propósito pedagógico es determinante:</strong> Alineación intencional de TIC con objetivos académicos fuerte predictor de rendimiento (r=0.587).</p>
+            <p>⚠️ <strong>Frecuencia tiene efecto moderado:</strong> Más uso ≠ mejor aprendizaje (r=0.428), sugiere calidad supera cantidad.</p>
+            <p>→ <strong>Motivación como mediador:</strong> Correlación motivación-rendimiento es relativamente débil (r=0.299), indicando que motivación sin estrategias pedagógicas efectivas es insuficiente.</p>
+        </div>
+    </div>
+
+    <!-- ANÁLISIS COMPARATIVO -->
+    <div class="seccion">
+        <h2>🏫 Análisis Comparativo por Centro Educativo</h2>
+
+        <table class="tabla-comparativa">
+            <thead>
+                <tr>
+                    <th>Centro Educativo</th>
+                    <th>n</th>
+                    <th>Disponibilidad %</th>
+                    <th>Frecuencia Media</th>
+                    <th>Rendimiento</th>
+                    <th>Motivación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Juan Bautista De la Cruz</strong></td>
+                    <td>38</td>
+                    <td><span class="badge badge-success">71.1%</span></td>
+                    <td>2.82</td>
+                    <td><span class="badge badge-warning">3.05</span></td>
+                    <td><span class="badge badge-success">3.38</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Federico Augusto González</strong></td>
+                    <td>42</td>
+                    <td><span class="badge badge-success">66.7%</span></td>
+                    <td>2.68</td>
+                    <td><span class="badge badge-warning">2.99</span></td>
+                    <td><span class="badge badge-warning">3.26</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 20px; padding: 15px; background: var(--light); border-radius: 6px;">
+            <p><strong>Observación:</strong> Juan Bautista De la Cruz muestra ligera ventaja en disponibilidad (71.1% vs 66.7%), frecuencia (2.82 vs 2.68) y motivación (3.38 vs 3.26), aunque diferencias no son estadísticamente grandes. Ambos centros muestran patrones similares de rendimiento moderado (≈3.0).</p>
+        </div>
+    </div>
+
+    <!-- CONCLUSIONES -->
+    <div class="conclusiones">
+        <h2>✓ CONCLUSIONES E IMPLICACIONES</h2>
+
+        <div class="conclusion-item">
+            <strong>Conclusión General</strong>
+            Las herramientas tecnológicas impactan positivamente el rendimiento académico y la motivación de estudiantes de tercer grado, pero de forma MODERADA y CONDICIONADA a disponibilidad y propósito pedagógico claro. No es la tecnología per se, sino su integración efectiva, la que genera aprendizaje significativo.
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Impacto en Rendimiento Académico</strong>
+            El uso de TIC correlaciona positivamente con rendimiento (r=0.485, moderado), pero la relación no es determinista. Disponibilidad física es necesaria pero insuficiente; propósito pedagógico intencional explica mayor varianza (r=0.587). Recomendación: Capacitación docente en diseño de actividades significativas con TIC.
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Impacto en Motivación Estudiantil</strong>
+            La motivación muestra mayor responsividad a TIC (r=0.612 con disponibilidad) que rendimiento. Efecto "novedad" es real pero frágil. Para motivación sostenida: (1) Variedad de actividades, (2) Éxito inicial, (3) Autonomía estudiantil, (4) Relevancia percibida.
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Brecha Digital y Equidad</strong>
+            32% de estudiantes aún estudian sin TIC disponibles, impactando equidad. Prioridad: Inversión en disponibilidad es requisito básico. Cuando hay disponibilidad, diferencias entre centros son mínimas, sugiriendo que acceso es más determinante que nivel socioeconómico.
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Calidad sobre Cantidad</strong>
+            Frecuencia de uso muestra correlación moderada (r=0.428), menor que propósito pedagógico (r=0.587). Conclusión: 3-4 actividades TIC bien diseñadas superiores a 6-8 actividades sin propósito. Docentes deben enfatizar diseño sobre cantidad.
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Desafíos Identificados</strong>
+            (1) Brecha participación-concentración sugiere distracción digital; (2) Baja transferencia de aprendizaje (aplicación a contextos nuevos) requiere estrategias constructivistas; (3) Evaluación con TIC es área débil (3.24/5).
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Recomendaciones para Docentes</strong>
+            • Planifique actividades TIC con objetivo pedagógico claro (no "usar tech por usar")<br>
+            • Establezca protocolos para minimizar distracciones digitales<br>
+            • Incluya actividades de aplicación y transferencia, no solo presentación<br>
+            • Use evaluación formativa con TIC para dar retroalimentación inmediata<br>
+            • Varíe modelos de interacción (individual, parejas, colaborativo) para mantener motivación
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Recomendaciones para Directivos</strong>
+            • Continuar inversión en disponibilidad de dispositivos y conectividad<br>
+            • Ofrecer capacitación sistemática en pedagogía digital (no solo manejo técnico)<br>
+            • Establecer estándares de calidad para integración TIC en currículo<br>
+            • Crear grupos de colaboración entre docentes para compartir buenas prácticas<br>
+            • Evaluar regularmente impacto de TIC en aprendizaje, no solo uso
+        </div>
+
+        <div class="conclusion-item">
+            <strong>Sugerencias para Investigación Futura</strong>
+            • Diseño cuasi-experimental: Comparar grupo con/sin TIC controlando variables<br>
+            • Análisis cualitativo: Entrevistas a docentes sobre barreras de implementación<br>
+            • Medidas longitudinales: Rastrear persistencia de efectos a lo largo del año escolar<br>
+            • Análisis por género/variables demográficas: Explorar diferencias de subgrupos<br>
+            • Casos de referencia: Investigar centros con implementación TIC innovadora como modelos
+        </div>
+    </div>
+
+    <!-- LIMITACIONES -->
+    <div class="seccion" style="background: #fffacd; border-left: 5px solid var(--warning);">
+        <h2>⚠️ Limitaciones del Estudio</h2>
+        <ul style="margin-left: 20px; line-height: 1.8;">
+            <li><strong>Muestra limitada:</strong> n=80 en 2 centros; resultados no generalizables a todo el país</li>
+            <li><strong>Medida de percepción:</strong> Datos autorreportados por estudiantes 3er grado; sesgo de deseabilidad social posible</li>
+            <li><strong>Variables no controladas:</strong> SES familiar, capital cultural, preparación docente, tiempo en TIC no fueron medidos</li>
+            <li><strong>Diseño observacional:</strong> Correlación ≠ causalidad; no se puede afirmar que TIC CAUSAN mejor rendimiento (confusores posibles)</li>
+            <li><strong>Medidas de rendimiento académico:</strong> Fueron percepciones estudiantiles, no calificaciones objetivas</li>
+            <li><strong>Efecto "novedad":</strong> Estudiantes pueden reportar mayor motivación por factor sorpresa, no por calidad pedagógica</li>
+        </ul>
+    </div>
+
+    <!-- REFERENCIAS -->
+    <div class="seccion">
+        <h2>📚 Referencias Bibliográficas</h2>
+        <ol style="margin-left: 20px; line-height: 1.8;">
+            <li>Hattie, J. (2008). Visible Learning: A Synthesis of Over 800 Meta-Analyses Relating to Achievement. Routledge.</li>
+            <li>Mayer, R. E. (2009). Multimedia Learning (2nd ed.). Cambridge University Press.</li>
+            <li>Papert, S., & Harel, I. (1991). Situating constructionism. Constructionism, 36(2), 191-205.</li>
+            <li>Prensky, M. (2005). "Engage Me or Enrage Me": What Today's Learners Demand. Educause Review, 40(5), 60-64.</li>
+            <li>Reséndiz, E. (2014). Tecnología e Innovación en la Educación Latinoamericana. Observatorio de Innovación Educativa.</li>
+            <li>Schwartz, D. L., & Martin, T. (2004). Inventing to Prepare for Future Learning: The Hidden Efficiency of Encouraging Original Student Production in Statistics Instruction. Cognition and Instruction, 22(2), 129-184.</li>
+        </ol>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p><strong>Investigador:</strong> Milton Raúl Nova González</p>
+        <p><strong>Institución:</strong> Universidad Autónoma de Santo Domingo (UASD)</p>
+        <p><strong>Programa:</strong> Master en Tecnologías de Información y Comunicación para Docentes</p>
+        <p><strong>Año Académico:</strong> 2025-2026</p>
+        <p style="margin-top: 20px; font-size: 0.85em; color: #999;">
+            Este reporte fue generado automáticamente con fines académicos y de investigación.
+            Datos ficticios creados con propósitos ilustrativos.
+        </p>
+    </div>
+</div>
+
+<script>
+// Gráfico 1: Disponibilidad
+Plotly.newPlot('grafico-disponibilidad', [{
+    labels: ['Sí (68.8%)', 'No (21.3%)', 'No sabe (10.0%)'],
+    values: [55, 17, 8],
+    type: 'pie',
+    marker: {colors: ['#27ae60', '#e74c3c', '#95a5a6']},
+    textinfo: 'label+value',
+    hovertemplate: '<b>%{label}</b><br>n=%{value}<extra></extra>'
+}], {
+    title: 'Disponibilidad de Dispositivos Tecnológicos',
+    height: 400,
+    margin: {l: 50, r: 50, t: 50, b: 50}
+});
+
+// Gráfico 2: Frecuencia
+Plotly.newPlot('grafico-frecuencia', [{
+    x: ['Nunca', '1 vez', '2-3 veces', '4-5 veces', 'Más de 5'],
+    y: [4, 8, 28, 27, 13],
+    type: 'bar',
+    marker: {color: '#3498db'},
+    text: [4, 8, 28, 27, 13],
+    textposition: 'outside',
+    hovertemplate: 'Frecuencia: %{x}<br>Estudiantes: %{y}<extra></extra>'
+}], {
+    title: 'Frecuencia de Uso de TIC por Semana',
+    xaxis: {title: 'Frecuencia'},
+    yaxis: {title: 'Cantidad de Estudiantes'},
+    height: 400,
+    margin: {l: 70, r: 50, t: 50, b: 100},
+    showlegend: false
+});
+
+// Gráfico 3: Propósito
+Plotly.newPlot('grafico-proposito', [{
+    r: [3.53, 3.46, 3.24, 3.51],
+    theta: ['Planificación', 'Investigación', 'Evaluación', 'Presentación/Refuerzo'],
+    fill: 'toself',
+    type: 'scatterpolar',
+    marker: {color: '#9b59b6'},
+    line: {color: '#9b59b6'}
+}], {
+    title: 'Propósito Pedagógico de TIC (escala 1-5)',
+    polar: {radialaxis: {visible: true, range: [0, 5]}},
+    height: 400,
+    margin: {l: 100, r: 100, t: 50, b: 100}
+});
+
+// Gráfico 4: Rendimiento
+Plotly.newPlot('grafico-rendimiento', [{
+    x: ['Comprensión', 'Retención', 'Aplicación', 'Aplicación Nuevos', 'Expresión'],
+    y: [3.08, 3.18, 2.95, 2.88, 2.88],
+    type: 'bar',
+    marker: {color: ['#e74c3c', '#e74c3c', '#e67e22', '#e67e22', '#e67e22']},
+    text: [3.08, 3.18, 2.95, 2.88, 2.88],
+    textposition: 'outside',
+    hovertemplate: '%{x}: %{y:.2f}/5<extra></extra>'
+}], {
+    title: 'Dimensiones de Rendimiento Académico',
+    xaxis: {title: 'Aspecto del Aprendizaje'},
+    yaxis: {title: 'Calificación (1-5)', range: [0, 5]},
+    height: 400,
+    margin: {l: 70, r: 50, t: 50, b: 120},
+    showlegend: false
+});
+
+// Gráfico 5: Persistencia
+Plotly.newPlot('grafico-persistencia', [{
+    x: ['Retención\n(P9)', 'Aplicación\n(P11)', 'Expresión\n(P12)'],
+    y: [3.18, 2.95, 2.88],
+    name: 'Persistencia',
+    type: 'bar',
+    marker: {color: '#1abc9c'},
+    text: [3.18, 2.95, 2.88],
+    textposition: 'outside',
+    hovertemplate: '%{x}: %{y:.2f}/5<extra></extra>'
+}], {
+    title: 'Indicadores de Persistencia del Aprendizaje',
+    xaxis: {title: 'Dimensión'},
+    yaxis: {title: 'Calificación (1-5)', range: [0, 5]},
+    height: 400,
+    margin: {l: 70, r: 50, t: 50, b: 100},
+    showlegend: false
+});
+
+// Gráfico 6: Interés
+Plotly.newPlot('grafico-interes', [{
+    x: ['Interés Inicial\n(P13)', 'Atención vs Tradicional\n(P14)'],
+    y: [3.45, 3.54],
+    type: 'bar',
+    marker: {color: ['#f39c12', '#f39c12']},
+    text: [3.45, 3.54],
+    textposition: 'outside',
+    hovertemplate: '%{x}: %{y:.2f}/5<extra></extra>'
+}], {
+    title: 'Interés Inicial Generado por TIC',
+    xaxis: {title: 'Dimensión'},
+    yaxis: {title: 'Calificación (1-5)', range: [0, 5]},
+    height: 400,
+    margin: {l: 70, r: 50, t: 50, b: 100},
+    showlegend: false
+});
+
+// Gráfico 7: Compromiso
+Plotly.newPlot('grafico-compromiso', [{
+    x: ['Participación\n(P15)', 'Concentración\n(P16)'],
+    y: [3.38, 3.15],
+    type: 'bar',
+    marker: {color: ['#3498db', '#e74c3c']},
+    text: [3.38, 3.15],
+    textposition: 'outside',
+    hovertemplate: '%{x}: %{y:.2f}/5<extra></extra>'
+}], {
+    title: 'Compromiso Sostenido en Actividades TIC',
+    xaxis: {title: 'Aspecto'},
+    yaxis: {title: 'Calificación (1-5)', range: [0, 5]},
+    height: 400,
+    margin: {l: 70, r: 50, t: 50, b: 100},
+    showlegend: false
+});
+
+// Gráfico 8: Actitud
+Plotly.newPlot('grafico-actitud', [{
+    x: ['Considera Positivo\n(P17)', 'Aumenta Deseo Aprender\n(P18)'],
+    y: [3.59, 3.55],
+    type: 'bar',
+    marker: {color: '#27ae60'},
+    text: [3.59, 3.55],
+    textposition: 'outside',
+    hovertemplate: '%{x}: %{y:.2f}/5<extra></extra>'
+}], {
+    title: 'Actitud Positiva Hacia Herramientas TIC',
+    xaxis: {title: 'Indicador'},
+    yaxis: {title: 'Calificación (1-5)', range: [0, 5]},
+    height: 400,
+    margin: {l: 70, r: 50, t: 50, b: 100},
+    showlegend: false
+});
+</script>
+
+</body>
+</html>
