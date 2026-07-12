@@ -1,0 +1,42 @@
+# Archivos del sistema operativo
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Entornos y dependencias locales
+.venv/
+venv/
+**/.vendor/
+node_modules/
+
+# Cachés y archivos generados
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.log
+*.tmp
+*~
+~$*
+
+# Configuración local y credenciales
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Archivos de texto con datos sensibles, participantes o correos
+**/*.txt
+
+# Capturas e imágenes PNG locales
+**/*.png
+
+# Comprobantes y boletos privados
+**/Festiva_order_ticket*.pdf
+
+# Invitaciones de calendario con datos de reuniones
+**/*.ics
+
+# Configuración de editores
+.vscode/
+.idea/

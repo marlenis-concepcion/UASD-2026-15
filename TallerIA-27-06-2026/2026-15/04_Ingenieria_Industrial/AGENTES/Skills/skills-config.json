@@ -1,0 +1,241 @@
+{
+  "system": {
+    "name": "Yisairis Procedimientos - Skills",
+    "version": "1.0",
+    "author": "Yisairis",
+    "organization": "Ingeniería Industrial",
+    "language": "es-DO",
+    "compatibility": [
+      "Claude Code",
+      "GitHub Copilot",
+      "CodeX",
+      "ChatGPT",
+      "Claude.ai",
+      "Gemini",
+      "Llama",
+      "Custom APIs"
+    ]
+  },
+  "skills": [
+    {
+      "id": "crear-procedimiento",
+      "name": "Crear Procedimiento",
+      "description": "Guía paso a paso para crear un nuevo procedimiento con los 10 componentes obligatorios",
+      "command": "/crear-procedimiento [nombre]",
+      "file": "crear-procedimiento.md",
+      "duration": "10-14 días",
+      "complexity": "media",
+      "priority": 1,
+      "inputs": {
+        "nombre_procedimiento": "string",
+        "area": "RRHH|Administrativa|Financiera",
+        "usuarios_afectados": "number",
+        "complejidad": "baja|media|alta"
+      },
+      "outputs": {
+        "procedimiento_v1.0": "markdown",
+        "diagrama_flujo": "image/svg",
+        "tabla_responsabilidades": "table"
+      },
+      "dependencies": [],
+      "next_steps": [
+        "validar-legalidad",
+        "implementar-procedimiento"
+      ]
+    },
+    {
+      "id": "implementar-procedimiento",
+      "name": "Implementar Procedimiento",
+      "description": "Lanzar procedimiento a la institución en 3 fases (Preparación, Lanzamiento, Consolidación)",
+      "command": "/implementar-procedimiento [nombre]",
+      "file": "implementar-procedimiento.md",
+      "duration": "8 semanas",
+      "complexity": "alta",
+      "priority": 2,
+      "inputs": {
+        "nombre_procedimiento": "string",
+        "fecha_lanzamiento": "date",
+        "responsable": "string",
+        "equipo_usuarios": "number"
+      },
+      "outputs": {
+        "plan_implementacion": "markdown",
+        "metricas_baseline": "spreadsheet",
+        "material_capacitacion": "pdf"
+      },
+      "dependencies": [
+        "crear-procedimiento",
+        "validar-legalidad"
+      ],
+      "next_steps": [
+        "seguimiento-procedimiento",
+        "optimizar-procedimiento"
+      ]
+    },
+    {
+      "id": "validar-legalidad",
+      "name": "Validar Legalidad",
+      "description": "Verificar 100% conformidad con normas legales, derechos laborales y privacidad",
+      "command": "/validar-legalidad [nombre]",
+      "file": "validar-legalidad.md",
+      "duration": "3-5 días",
+      "complexity": "alta",
+      "priority": 1,
+      "inputs": {
+        "nombre_procedimiento": "string",
+        "tipo_procedimiento": "personal|administrativo|financiero",
+        "asesor_legal": "string"
+      },
+      "outputs": {
+        "matriz_conformidad": "table",
+        "riesgos_identificados": "list",
+        "aprobacion_legal": "signed_document"
+      },
+      "dependencies": [
+        "crear-procedimiento"
+      ],
+      "next_steps": [
+        "implementar-procedimiento"
+      ]
+    },
+    {
+      "id": "optimizar-procedimiento",
+      "name": "Optimizar Procedimiento",
+      "description": "Mejorar procedimiento existente aplicando metodología de eficiencia (tiempo -20%, costo -15%)",
+      "command": "/optimizar-procedimiento [nombre]",
+      "file": "optimizar-procedimiento.md",
+      "duration": "14 días",
+      "complexity": "media",
+      "priority": 3,
+      "inputs": {
+        "nombre_procedimiento": "string",
+        "metrica_actual": "current_state",
+        "meta_esperada": "target_state"
+      },
+      "outputs": {
+        "analisis_flujo": "markdown",
+        "mejoras_propuestas": "list",
+        "procedimiento_v2.0": "markdown"
+      },
+      "dependencies": [
+        "crear-procedimiento"
+      ],
+      "next_steps": [
+        "validar-legalidad",
+        "implementar-procedimiento"
+      ]
+    },
+    {
+      "id": "plantilla-rapida",
+      "name": "Plantilla Rápida",
+      "description": "Acceso instantáneo a plantilla estándar de procedimiento (generales, personal, administrativa, financiera)",
+      "command": "/plantilla-rapida [tipo]",
+      "file": "plantilla-rapida.md",
+      "duration": "1 minuto",
+      "complexity": "baja",
+      "priority": 0,
+      "inputs": {
+        "tipo": "general|personal|administrativa|financiera|comprimida"
+      },
+      "outputs": {
+        "plantilla": "markdown",
+        "ejemplos": "markdown"
+      },
+      "dependencies": [],
+      "next_steps": [
+        "crear-procedimiento"
+      ]
+    }
+  ],
+  "execution_flow": {
+    "crear_nuevo_procedimiento": [
+      "plantilla-rapida",
+      "crear-procedimiento",
+      "validar-legalidad",
+      "implementar-procedimiento",
+      "seguimiento-procedimiento"
+    ],
+    "optimizar_existente": [
+      "optimizar-procedimiento",
+      "validar-legalidad",
+      "implementar-procedimiento"
+    ]
+  },
+  "templates": {
+    "general": "plantilla-rapida.md#general",
+    "personal": "plantilla-rapida.md#personal",
+    "administrativa": "plantilla-rapida.md#administrativa",
+    "financiera": "plantilla-rapida.md#financiera"
+  },
+  "metrics": {
+    "success_rate": ">=80%",
+    "time_reduction_target": "-20%",
+    "cost_reduction_target": "-15%",
+    "error_rate_target": "<2%",
+    "user_satisfaction_target": ">80%",
+    "legal_compliance": "100%"
+  },
+  "legal_framework": {
+    "country": "República Dominicana",
+    "primary_laws": [
+      {
+        "name": "Código Laboral",
+        "year": 2015,
+        "url": "https://tyt.do/codigolab"
+      },
+      {
+        "name": "Ley de Función Pública",
+        "year": 2008,
+        "number": "176-08",
+        "url": "https://tyt.do/ley17608"
+      },
+      {
+        "name": "Ley de Seguridad Social",
+        "year": 2001,
+        "number": "8-87",
+        "url": "https://tyt.do/ley887"
+      },
+      {
+        "name": "Constitución Política",
+        "year": 2015,
+        "url": "https://tyt.do/constitucion"
+      }
+    ]
+  },
+  "contact": {
+    "director": {
+      "name": "Yisairis",
+      "role": "Especialista Ingeniería Industrial",
+      "email": "[email]",
+      "phone": "[phone]",
+      "hours": "Lunes-Viernes 9am-5pm"
+    },
+    "legal_advisor": {
+      "name": "[Nombre]",
+      "availability": "Por cita",
+      "max_response_time": "3 días"
+    }
+  },
+  "documentation": {
+    "main_readme": "README.md",
+    "quick_reference": "REFERENCIA_RAPIDA.md",
+    "legal_matrix": "Documentos_Base/MATRIZ_LEGALIDAD.md",
+    "implementation_guide": "Documentos_Base/GUIA_IMPLEMENTACION.md",
+    "philosophy": "FILOSOFIA_EFICIENCIA.md",
+    "roadmap": "HOJA_DE_RUTA.md",
+    "procedures_index": "INDICE_PROCEDIMIENTOS.md"
+  },
+  "version_history": [
+    {
+      "version": "1.0",
+      "date": "2026-06-27",
+      "changes": "Creación inicial del sistema de skills universal"
+    }
+  ],
+  "support": {
+    "issue_reporting": "Email a Yisairis",
+    "feedback_channel": "Google Forms feedback",
+    "max_response_time": "24 horas",
+    "sla_availability": "99% (horario laboral)"
+  }
+}
